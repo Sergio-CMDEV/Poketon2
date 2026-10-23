@@ -1,2 +1,9 @@
 # Poketon
-Poketon es una aplicacion para principiantes de pokemon
+Poketon is an app for new pokemon players
+
+# Stack
+* HTML
+* CSS
+* JS
+* PHP
+* MariaDB
