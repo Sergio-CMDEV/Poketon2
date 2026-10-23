@@ -90,3 +90,49 @@ const types = { //coñazo historico btw
         noEffect: []
     }
 };
+
+function getMultiplier(attacker, defenderTypes) {
+    if (typeof defenderTypes === 'string') {
+        defenderTypes = [defenderTypes];
+    }
+
+    let totalMultiplier = 1;
+
+    for (const defenderType of defenderTypes) {
+        const typeData = types[attacker];
+        if (!typeData) continue;
+
+        if (typeData.superEffective.includes(defenderType)) {
+            totalMultiplier *= 2;
+        } else if (typeData.notVeryEffective.includes(defenderType)) {
+            totalMultiplier *= 0.5;
+        } else if (typeData.noEffect.includes(defenderType)) {
+            totalMultiplier *= 0;
+        }
+    }
+
+    return totalMultiplier;
+}
+
+function getMultiplier(attacker, defenderTypes) {
+    if (typeof defenderTypes === 'string') {
+        defenderTypes = [defenderTypes];
+    }
+
+    let totalMultiplier = 1;
+
+    for (const defenderType of defenderTypes) {
+        const typeData = types[attacker];
+        if (!typeData) continue;
+
+        if (typeData.superEffective.includes(defenderType)) {
+            totalMultiplier *= 2;
+        } else if (typeData.notVeryEffective.includes(defenderType)) {
+            totalMultiplier *= 0.5;
+        } else if (typeData.noEffect.includes(defenderType)) {
+            totalMultiplier *= 0;
+        }
+    }
+
+    return totalMultiplier;
+}
